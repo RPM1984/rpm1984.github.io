@@ -16,7 +16,7 @@
 <meta property="og:title" content="Ryan Miranda — Senior Technology Leader">
 <meta property="og:description" content="Melbourne-based senior technology leader. Platform engineering, cloud architecture, and engineering teams that move the needle.">
 <meta property="og:url" content="https://ryanmiranda.net">
-<meta property="og:image" content="https://raw.githubusercontent.com/rpm1984/rpm1984/main/avatar.png">
+<meta property="og:image" content="https://ryanmiranda.net/avatar.png">
 <meta property="og:locale" content="en_AU">
 <meta property="profile:first_name" content="Ryan">
 <meta property="profile:last_name" content="Miranda">
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ryan Miranda — Senior Technology Leader">
 <meta name="twitter:description" content="Melbourne-based senior technology leader. Platform engineering, cloud architecture, and engineering teams that move the needle.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/rpm1984/rpm1984/main/avatar.png">
+<meta name="twitter:image" content="https://ryanmiranda.net/avatar.png">
 
 <!-- JSON-LD structured data — Person schema -->
 <script type="application/ld+json">
@@ -34,7 +34,7 @@
   "@type": "Person",
   "name": "Ryan Miranda",
   "url": "https://ryanmiranda.net",
-  "image": "https://raw.githubusercontent.com/rpm1984/rpm1984/main/avatar.png",
+  "image": "https://ryanmiranda.net/avatar.png",
   "email": "rpmir1@gmail.com",
   "jobTitle": "Head of Technology & Engineering",
   "worksFor": {
@@ -54,7 +54,7 @@
   },
   "sameAs": [
     "https://www.linkedin.com/in/rpmir1",
-    "https://github.com/rpm1984",
+    "https://github.com/RPM1984",
     "https://stackoverflow.com/users/321946/rpm1984",
     "https://code-maze.com/author/ryanmiranda/"
   ],
@@ -528,6 +528,9 @@
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* Fallback if JS doesn't fire */
+  body:not(.js-loaded) .reveal { opacity: 1; transform: none; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     section { padding: 60px 32px; }
@@ -548,9 +551,9 @@
 
   <img
     class="avatar"
-    src="https://raw.githubusercontent.com/rpm1984/rpm1984/main/avatar.png"
+    src="avatar.png"
     alt="Ryan Miranda — Senior Technology Leader, Melbourne"
-    onerror="this.src='https://github.com/rpm1984.png';this.onerror=null;"
+    onerror="this.style.display='none'"
   />
 
   <p class="hero-eyebrow">Melbourne, Australia</p>
@@ -562,7 +565,7 @@
       <i class="fab fa-linkedin-in"></i> LinkedIn
     </a>
     <div class="social-divider"></div>
-    <a class="social-link" href="https://github.com/rpm1984" target="_blank">
+    <a class="social-link" href="https://github.com/RPM1984" target="_blank">
       <i class="fab fa-github"></i> GitHub
     </a>
     <div class="social-divider"></div>
@@ -572,7 +575,7 @@
   </div>
 
   <div class="hero-email">
-    <a href="mailto:rpmir1@gmail.com">rpmir1@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#1b696b7672692a5b7c767a727735787476"><span class="__cf_email__" data-cfemail="344644595d4605745359555d581a575b59">[email&#160;protected]</span></a>
   </div>
 </div>
 
@@ -583,10 +586,10 @@
   <p class="section-label reveal">About</p>
   <div class="about-grid">
     <div>
-      <h2 class="about-headline reveal">Engineering should be a <em>lever</em>, not a line item.</h2>
-      <p class="about-body reveal">I've spent most of my career at the intersection of technology and business — the place where a well-run engineering team either becomes a genuine competitive advantage or quietly drags everything else down.</p>
-      <p class="about-body reveal">Currently Head of Tech & Engineering at Homely.com.au, where I've been since 2010 — working across the stack early on, and gradually taking on more of the organisational and strategic side over time. That hands-on background shapes how I approach the leadership side of the work.</p>
-      <p class="about-body reveal">Outside of work, I volunteer with the Victoria State Emergency Service — a good reminder that most problems worth solving don't come with a keyboard attached.</p>
+      <h2 class="about-headline reveal">Hi, I'm <em>Ryan.</em></h2>
+      <p class="about-body reveal">I'm a technology leader based in Melbourne, currently running the engineering team at Homely.com.au. I've been there since 2010 — started as a developer, ended up responsible for the whole technology function. It happened gradually, which is probably the best way.</p>
+      <p class="about-body reveal">I like the work that sits between the technical and the human — figuring out how teams operate, how platforms scale, how to make good decisions with incomplete information. I've got a hands-on background and I don't think that's something to grow out of.</p>
+      <p class="about-body reveal">Outside of work I volunteer with the Victoria State Emergency Service. It's a good way to stay grounded — not every problem has a technical solution.</p>
     </div>
     <div class="reveal">
       <div class="aside-item">
@@ -686,8 +689,8 @@
     <h2 class="contact-headline reveal">Always up for a<br>good conversation.</h2>
     <p class="contact-sub reveal">Particularly interested in where technology and product strategy genuinely intersect — environments where engineering is a driver of outcomes, not a cost centre.</p>
     <div class="contact-links reveal">
-      <a class="contact-link" href="mailto:rpmir1@gmail.com">
-        <i class="fas fa-envelope"></i> rpmir1@gmail.com
+      <a class="contact-link" href="/cdn-cgi/l/email-protection#ff8d8f92968dcebf98929e9693d19c9092">
+        <i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="deacaeb3b7acef9eb9b3bfb7b2f0bdb1b3">[email&#160;protected]</span>
       </a>
       <a class="contact-link" href="https://linkedin.com/in/rpmir1" target="_blank">
         <i class="fab fa-linkedin-in"></i> LinkedIn
@@ -703,6 +706,8 @@
 </footer>
 
 <script>
+  document.body.classList.add('js-loaded');
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
