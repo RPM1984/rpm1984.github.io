@@ -1,28 +1,718 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Ryan Miranda</title>
-  <meta name="description" content="Ryan Miranda">
-  <meta name="author" content="Ryan Miranda">
-  <link rel="stylesheet" type="text/css" href="css/reset.css" />
-  <link rel="stylesheet" type="text/css" href="css/site.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Ryan Miranda — Senior Technology Leader | Platform Engineering | Melbourne</title>
+<meta name="description" content="Ryan Miranda is a Melbourne-based senior technology leader specialising in platform engineering, cloud architecture, and engineering organisation leadership. Currently Head of Tech & Engineering at Homely.com.au.">
+<meta name="keywords" content="Ryan Miranda, technology leader, platform engineering, cloud architecture, Azure, Melbourne, engineering leadership, Head of Engineering, Homely, DevOps">
+<meta name="author" content="Ryan Miranda">
+<link rel="canonical" href="https://ryanmiranda.net">
+
+<!-- Open Graph (LinkedIn, Facebook previews) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ryan Miranda — Senior Technology Leader">
+<meta property="og:description" content="Melbourne-based senior technology leader. Platform engineering, cloud architecture, and engineering teams that move the needle.">
+<meta property="og:url" content="https://ryanmiranda.net">
+<meta property="og:image" content="https://raw.githubusercontent.com/rpm1984/rpm1984/main/avatar.png">
+<meta property="og:locale" content="en_AU">
+<meta property="profile:first_name" content="Ryan">
+<meta property="profile:last_name" content="Miranda">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ryan Miranda — Senior Technology Leader">
+<meta name="twitter:description" content="Melbourne-based senior technology leader. Platform engineering, cloud architecture, and engineering teams that move the needle.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/rpm1984/rpm1984/main/avatar.png">
+
+<!-- JSON-LD structured data — Person schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ryan Miranda",
+  "url": "https://ryanmiranda.net",
+  "image": "https://raw.githubusercontent.com/rpm1984/rpm1984/main/avatar.png",
+  "email": "rpmir1@gmail.com",
+  "jobTitle": "Head of Technology & Engineering",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Homely.com.au",
+    "url": "https://homely.com.au"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Melbourne",
+    "addressRegion": "Victoria",
+    "addressCountry": "AU"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Monash University"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rpmir1",
+    "https://github.com/rpm1984",
+    "https://stackoverflow.com/users/321946/rpm1984",
+    "https://code-maze.com/author/ryanmiranda/"
+  ],
+  "knowsAbout": ["Platform Engineering", "Cloud Architecture", "Microsoft Azure", "DevOps", "Engineering Leadership", "Full-Stack Development", ".NET", "React"]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --bg: #1a1a14;
+    --bg2: #22221a;
+    --olive: #6b7040;
+    --tan: #c4b08a;
+    --cream: #e8dfc8;
+    --muted: #7a7a6a;
+    --accent: #a8b060;
+    --white: #f0ebe0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 30vw;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(168, 176, 96, 0.06);
+    line-height: 1;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--olive);
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s forwards;
+    filter: grayscale(20%);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.25s forwards;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-name span { color: var(--tan); }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+    color: var(--cream);
+    opacity: 0;
+    max-width: 520px;
+    line-height: 1.8;
+    animation: fadeUp 0.8s 0.55s forwards;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.7s forwards;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 16px;
+    border: 1px solid rgba(107, 112, 64, 0.2);
+    transition: all 0.25s;
+  }
+
+  .social-link i { font-size: 0.82rem; }
+  .social-link:hover { color: var(--accent); border-color: var(--accent); background: rgba(168,176,96,0.06); }
+
+  .social-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--olive);
+    opacity: 0.2;
+    margin: 0 2px;
+  }
+
+  .hero-email {
+    opacity: 0;
+    animation: fadeUp 0.8s 0.85s forwards;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-email a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--olive);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .hero-email a:hover { color: var(--white); border-color: var(--tan); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--olive), transparent);
+    opacity: 0.3;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 90px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--olive);
+    opacity: 0.3;
+    max-width: 80px;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .about-headline em { font-style: italic; color: var(--tan); }
+
+  .about-body {
+    font-size: 1rem;
+    color: var(--cream);
+    opacity: 0.8;
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+
+  .aside-item {
+    border-left: 2px solid var(--olive);
+    padding: 14px 0 14px 22px;
+    margin-bottom: 20px;
+  }
+
+  .aside-item-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  .aside-item-value { font-size: 0.9rem; color: var(--cream); }
+
+  /* ── SKILLS ── */
+  .skills-full {
+    background: var(--bg2);
+    padding: 90px 0;
+  }
+
+  .skills-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .skill-card {
+    background: var(--bg);
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--olive);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .skill-card:hover { background: #222218; }
+  .skill-card:hover::before { transform: scaleX(1); }
+
+  .skill-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .skill-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  /* ── CAREER ── */
+  .career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  .career-co {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .career-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .career-years {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .career-body {
+    font-size: 0.92rem;
+    color: var(--cream);
+    opacity: 0.75;
+    line-height: 1.8;
+  }
+
+  /* ── CONTACT ── */
+  .contact-wrap {
+    text-align: center;
+    padding: 120px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-wrap::before {
+    content: "LET'S TALK";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 16vw;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(107, 112, 64, 0.05);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .contact-inner { position: relative; z-index: 1; }
+
+  .contact-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 20px;
+  }
+
+  .contact-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 18px;
+  }
+
+  .contact-sub {
+    font-size: 0.95rem;
+    color: var(--cream);
+    opacity: 0.65;
+    margin-bottom: 44px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    padding: 14px 28px;
+    border: 1px solid rgba(107, 112, 64, 0.35);
+    transition: all 0.3s;
+  }
+
+  .contact-link:hover {
+    background: rgba(168, 176, 96, 0.08);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(107, 112, 64, 0.2);
+    padding: 28px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    section { padding: 60px 32px; }
+    .about-grid, .career-grid { grid-template-columns: 1fr; gap: 40px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .skills-inner { padding: 0 32px; }
+    .contact-wrap { padding: 80px 32px; }
+    footer { padding: 28px 32px; flex-direction: column; gap: 10px; }
+    .social-divider { display: none; }
+  }
+</style>
 </head>
 <body>
-    <div id="container">
-        <h1>Ryan Miranda</h1>
-        <img id="avatar" src="images/avatar.jpg"/>
-        <h2><i>programming. film. music. cocktails.</i></h2>
-        <div class="links">
-            <ul>
-                <li><a href="https://www.linkedin.com/in/rpmir1"><img src="images/linkedin.png" alt="LinkedIn"/></a></li>
-                <li><a href="https://www.facebook.com/rmiranda1984"><img src="images/facebook.png" alt="Facebook"/></a></li>
-                <li><a href="https://twitter.com/rpmir1984"><img src="images/twitter.png" alt="Twitter"/></a></li>
-                <li><a href="https://code-maze.com/author/ryanmiranda/"><img src="images/codemaze.png" alt="CodeMaze"/></a></li>    
-                <li><a href="https://github.com/rpm1984"><img src="images/github.png" alt="GitHub"/></a></li>
-                <li><a href="https://stackoverflow.com/users/321946/rpm1984"><img src="images/stackoverflow.png" alt="Stack Overflow"/></a></li>        
-            </ul>
-        </div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-text">RM</div>
+
+  <img
+    class="avatar"
+    src="https://raw.githubusercontent.com/rpm1984/rpm1984/main/avatar.png"
+    alt="Ryan Miranda — Senior Technology Leader, Melbourne"
+    onerror="this.src='https://github.com/rpm1984.png';this.onerror=null;"
+  />
+
+  <p class="hero-eyebrow">Melbourne, Australia</p>
+  <h1 class="hero-name">Ryan <span>Miranda</span></h1>
+  <p class="hero-tagline">Senior technology leader — platform engineering, cloud architecture, and engineering teams that actually move the needle.</p>
+
+  <div class="hero-socials">
+    <a class="social-link" href="https://www.linkedin.com/in/rpmir1" target="_blank">
+      <i class="fab fa-linkedin-in"></i> LinkedIn
+    </a>
+    <div class="social-divider"></div>
+    <a class="social-link" href="https://github.com/rpm1984" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <div class="social-divider"></div>
+    <a class="social-link" href="https://stackoverflow.com/users/321946/rpm1984" target="_blank">
+      <i class="fab fa-stack-overflow"></i> Stack Overflow
+    </a>
   </div>
+
+  <div class="hero-email">
+    <a href="mailto:rpmir1@gmail.com">rpmir1@gmail.com</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section>
+  <p class="section-label reveal">About</p>
+  <div class="about-grid">
+    <div>
+      <h2 class="about-headline reveal">Engineering should be a <em>lever</em>, not a line item.</h2>
+      <p class="about-body reveal">I've spent most of my career at the intersection of technology and business — the place where a well-run engineering team either becomes a genuine competitive advantage or quietly drags everything else down.</p>
+      <p class="about-body reveal">Currently Head of Tech & Engineering at Homely.com.au, where I've been since 2010 — working across the stack early on, and gradually taking on more of the organisational and strategic side over time. That hands-on background shapes how I approach the leadership side of the work.</p>
+      <p class="about-body reveal">Outside of work, I volunteer with the Victoria State Emergency Service — a good reminder that most problems worth solving don't come with a keyboard attached.</p>
+    </div>
+    <div class="reveal">
+      <div class="aside-item">
+        <div class="aside-item-label">Based</div>
+        <div class="aside-item-value">Melbourne, Victoria</div>
+      </div>
+      <div class="aside-item">
+        <div class="aside-item-label">Industries</div>
+        <div class="aside-item-value">Proptech · Telco · Government · Enterprise</div>
+      </div>
+      <div class="aside-item">
+        <div class="aside-item-label">Stack</div>
+        <div class="aside-item-value">.NET · Azure · React · SQL</div>
+      </div>
+      <div class="aside-item">
+        <div class="aside-item-label">Community</div>
+        <div class="aside-item-value">Volunteer, Victoria SES</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT I DO -->
+<div class="skills-full">
+  <div class="skills-inner">
+    <p class="section-label reveal">What I Do</p>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-num">01</div>
+        <div class="skill-title">Technology Strategy</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">02</div>
+        <div class="skill-title">Cloud & Platform Architecture</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">03</div>
+        <div class="skill-title">Engineering Org Leadership</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">04</div>
+        <div class="skill-title">DevOps & Developer Experience</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">05</div>
+        <div class="skill-title">AI-Augmented Development</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">06</div>
+        <div class="skill-title">Coaching & Mentorship</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">07</div>
+        <div class="skill-title">Full-Stack Development</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">08</div>
+        <div class="skill-title">Distributed & Offshore Teams</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAREER -->
+<section>
+  <p class="section-label reveal">Career</p>
+  <div class="career-grid">
+    <div class="reveal">
+      <div class="career-co">Homely.com.au</div>
+      <div class="career-role">Head of Tech & Engineering</div>
+      <div class="career-years">2010 — Present</div>
+      <div class="career-body">Joined as an early engineer and gradually took on more — platform, team, culture, and eventually the full technology leadership brief. A long tenure that covered a lot of ground.</div>
+    </div>
+    <div class="reveal">
+      <div class="career-co">IBM</div>
+      <div class="career-role">Tech Lead</div>
+      <div class="career-years">2006 — 2010</div>
+      <div class="career-body">Enterprise software delivery across a range of client environments, including TAB.com.au. Moved from development and analysis into a technical lead role over time.</div>
+    </div>
+    <div class="reveal">
+      <div class="career-co">Code Maze</div>
+      <div class="career-role">Technical Author</div>
+      <div class="career-years">Ongoing</div>
+      <div class="career-body">Contributing technical articles to a well-read .NET and C# publication. Useful for staying sharp and giving something back to the dev community.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<div class="contact-wrap">
+  <div class="contact-inner">
+    <p class="contact-label reveal">Get in Touch</p>
+    <h2 class="contact-headline reveal">Always up for a<br>good conversation.</h2>
+    <p class="contact-sub reveal">Particularly interested in where technology and product strategy genuinely intersect — environments where engineering is a driver of outcomes, not a cost centre.</p>
+    <div class="contact-links reveal">
+      <a class="contact-link" href="mailto:rpmir1@gmail.com">
+        <i class="fas fa-envelope"></i> rpmir1@gmail.com
+      </a>
+      <a class="contact-link" href="https://linkedin.com/in/rpmir1" target="_blank">
+        <i class="fab fa-linkedin-in"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Ryan Miranda</span>
+  <span>Melbourne · Victoria</span>
+  <span>ryanmiranda.net</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 70);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
